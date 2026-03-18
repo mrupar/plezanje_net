@@ -1,0 +1,40 @@
+
+<!-- ===================== route.html ===================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Route Detail</title>
+<style>
+body { font-family: Arial; margin:0; background:#f4f6f8; }
+.container { max-width:800px; margin:auto; padding:20px; }
+.comment { background:#eee; padding:8px; margin:5px 0; border-radius:5px; }
+textarea { width:100%; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Matka Canyon - King Line</h2>
+  <p>Grade: 7a | Length: 25m</p>
+  <p>Technical climbing with exposure.</p>
+
+  <h3>Comments</h3>
+  <div id="comments"></div>
+  <textarea id="input"></textarea>
+  <button onclick="addComment()">Post</button>
+</div>
+
+<script>
+function addComment(){
+  const input = document.getElementById('input');
+  if(!input.value) return;
+  const div = document.createElement('div');
+  div.className='comment';
+  div.innerText=input.value;
+  document.getElementById('comments').appendChild(div);
+  input.value='';
+}
+</script>
+</body>
+</html>
+
